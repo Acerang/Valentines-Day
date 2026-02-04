@@ -16,6 +16,7 @@ class ValentinesDayCard extends Phaser.Scene {
         this.load.image('yesNo', 'YesNo.png');
         this.load.image('catGif', 'catGif.gif');
         this.load.image('cat','Cat2.png');
+        this.load.image('us','Noi.jpeg');
     }
 
     create() {
@@ -28,9 +29,7 @@ class ValentinesDayCard extends Phaser.Scene {
 
         const rectangle = this.add.image(rectX + rectWidth / 2, rectY + rectHeight / 2, 'bg').setDisplaySize(rectWidth, rectHeight).setScale(3);
         rectangle.setDepth(1);
-        const cat = this.add.image(rectX+200,rectY , 'catGif').setScale(1.4);
-
-        cat.setDepth(2);
+        const cat = this.add.image(rectX+200,rectY , 'catGif').setScale(1.4).setDepth(2);
 
         const text = this.add.text(rectX-45,rectY+200, 'Will you be my Valentine?',{
             fontStyle: 'italic',
@@ -58,6 +57,7 @@ class ValentinesDayCard extends Phaser.Scene {
             noButton.setVisible(false);
             noText.setVisible(false);
             cat.setTexture('cat');
+            const us = this.add.image(rectX+200,rectY+350 , 'us').setScale(0.15).setDepth(2);
             console.log('Yes clicked!');
         });
 
